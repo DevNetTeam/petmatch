@@ -112,9 +112,3 @@ else
 }
 $mypetsstr.="</div></div>";
 echo $mypetsstr;
-
-
-
-
-
-
