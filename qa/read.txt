@@ -1,0 +1,45 @@
+=============================================================================================
+(1)Checklist - 
+---------------------------------------------------------------------------------------------
+is a list of tests which should be run in a definite procedure. 
+It helps to understand if testing is fully run and how many failed. 
+It also helps formalize testing separetely taken functionality, 
+putting tests in a list. Test order in the checklist may be strict as well as random.
+=============================================================================================
+(2)Test Case - 
+---------------------------------------------------------------------------------------------
+is a series of minimal simple steps that has to be done to check a particular functionality.
+=============================================================================================
+(3)Test Design - 
+---------------------------------------------------------------------------------------------
+is complex document describing the testing process. 
+It describes a list of inputs for given software that will provide a set of expected outputs.
+=============================================================================================
+(4)Test Plan - 
+---------------------------------------------------------------------------------------------
+outlines the common strategy that will be applied to test an application.
+=============================================================================================
+(5)Test Report - 
+---------------------------------------------------------------------------------------------
+is needed to reflect testing results in a formal way, which gives an opportunity 
+to estimate testing results quickly. It is a document that records data obtained from an 
+evaluation experiment in an organized manner, describes the environmental or 
+operating conditions, and shows the comparison of test results with test objectives.
+=============================================================================================
+(6)Test Scenarios - 
+---------------------------------------------------------------------------------------------
+are just a flow of application and used to ensure all process flows tested thoroughly.
+=============================================================================================
+(7)Test Strategy - 
+---------------------------------------------------------------------------------------------
+document is a high level document and is usually developed by a project manager. 
+This document defines “Software Testing Approach” to achieve testing objectives. 
+Test Strategy document is a static document meaning that it is not often updated.
+=============================================================================================
+(8)Requirements Traceability Matrix(RTM) - 
+---------------------------------------------------------------------------------------------
+is a document that connects requirements throughout the validation process. 
+The traceability matrix is a tool both for the validation team, 
+to ensure that requirements are not lost during the validation project, and for auditors, 
+to review the validation documentation.
+=============================================================================================
