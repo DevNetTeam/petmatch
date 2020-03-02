@@ -11,25 +11,49 @@ class dbClassPetsFunctions
         $petsArray = $db->getObjectsGeneral("pets", "WHERE userID='$userID'", "Pet");
         return $petsArray;
     }
-    //-----------------------------------------------Images:
+    public function getPetsArrayByHelpID($helpID){
+        //gets help ID, returns array of Pets in Help Request
+        $db = new dbClass();
+        $p_hr = $db->getObjectsGeneral("pets_helprequests", "WHERE helpID='$helpID'", "Pet_HelpRequest"); //array of Pet_HelpRequest
+        /*
+        echo "<pre>";
+        var_dump($p_hr);
+        echo "</pre>";
+        */
+        $petsArray = array();
+        foreach ($p_hr as $k=>$v){
+            $petID = $v->getPetID();
+            $pet = $db->getObjectsGeneral("pets", "WHERE petID='$petID'", "Pet")[0];
+            array_push($petsArray, $pet);
+        }
+        return $petsArray;
+    }
+    public function getPetsArrayByType($type){
+        //gets help ID, returns array of Pets in Help Request
+        $db = new dbClass();
+        $petsArray = $db->getObjectsGeneral("pets", "WHERE petType='$type'", "Pet");
+        return $petsArray;
+    }
+    //-----------------------------------------------------------------------------------------------Images:
     function loadPetImageByID($petID) {
         //uploads an image for pet with id given to function
+        //todo: check size, more formats maybe?
         //printing $_FILES array:
         //echo "loadPetImage function. ID = ".$petID."<br>";
         //echo "<pre>";
         //print_r($_FILES);
         //echo "</pre>";
         //echo "Type: ".$_FILES['load_user_file']['type']."<br>";
-        if ($_FILES['load_user_file']['tmp_name'] != "")                                 //if file was chosen
+        if ($_FILES['load_user_file']['tmp_name'] != "")                                    //if file was chosen
         {
-            if (file_exists($_FILES['load_user_file']['tmp_name']))                     //if file exists
+            if (file_exists($_FILES['load_user_file']['tmp_name']))                         //if file exists
             {
                 if (strpos($_FILES['load_user_file']['type'], 'image') !== false)       //if image (v)
                 {
                     //echo "POST[id] = ".$_POST['id']."<br>";
                     $db = new dbClass();
                     $p = $db->getPetByID($petID);
-                    if ($p != null)                                                     //if pet exists (v)
+                    if ($p != null)                                                         //if pet exists (v)
                     {
                         $location = "Images/Pets/";
                         $filename = trim($petID).".jpg";
