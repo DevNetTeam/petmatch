@@ -146,16 +146,16 @@ else {
                     $user = $dbu->getUserByID($v->getInterestedUserID());
                     $str .= "<div class='card text-center'>";
                     $str .= "<div class='card-body'>";
-                    $str .= $user->getUserFName() . " " . $user->getUserLName() . " - " . $user->getUserPhone();
+                    $str .= $user->getUserFName() . " " . $user->getUserLName() . " tel:" . $user->getUserPhone();
                     $str .= "<form action='myHelpRequests.php' method=post><button type='submit' class='btn btn-primary' name='UserProfileToShow" . $user->getUserID() . "'>" . $user->getUserFName() . "'s Profile</button>  ";
                     $str .= "<button type='submit' class='btn btn-primary' name='rate" . $user->getUserID() . "-" . $v->getHelpID() . "'>Mark as done by " . $user->getUserFName() . "</button>  </form>";
                     $str.="</div></div>";
                 }
-                $str .= "<small id='emailHelp' class='form-text text-muted'>you can give them a call to set up a meeting.</small>";
+                $str .= "<small id='emailHelp' class='form-text text-muted'>You can give them a call to set up a meeting.</small>";
             }
             else
             {
-                $str .= "no one is interested yet<br>";
+                $str .= "No one is interested yet<br>";
             }
         }
         else if ($k->getHelpStatus() == 2)//help request is done
@@ -163,7 +163,8 @@ else {
             $dbr = new dbClassRankingFunctions();
             $dbu = new dbClassUserFunctions();
             $userWhoDoneHelp = $dbu->getUserByID($dbr->getRankedUserIdByHelpID($k->getHelpID()));
-            $str .= "<form action='myHelpRequests.php' method=post><button type='submit' class='buttonLooksLikeLink' name='UserProfileToShow" . $userWhoDoneHelp->getUserID() . "'><b>You've marked this request as done by " . $userWhoDoneHelp->getUserFName() . " " . $userWhoDoneHelp->getUserLName() . " (" . $userWhoDoneHelp->getUserPhone() . ")" . "</b></button></form>";
+            $str .= "<form action='myHelpRequests.php' method=post><button type='submit' class='buttonLooksLikeLink' name='UserProfileToShow" . $userWhoDoneHelp->getUserID() . "'><b>You've marked this request as done by " . $userWhoDoneHelp->getUserFName() . " " . $userWhoDoneHelp->getUserLName() . "</b></button></form>";
+            // $str .= "<form action='myHelpRequests.php' method=post><button type='submit' class='buttonLooksLikeLink' name='UserProfileToShow" . $userWhoDoneHelp->getUserID() . "'><b>You've marked this request as done by " . $userWhoDoneHelp->getUserFName() . " " . $userWhoDoneHelp->getUserLName() . " (" . $userWhoDoneHelp->getUserPhone() . ")" . "</b></button></form>";
             $str .= "";
         }
         $str .= "</p></div>";
