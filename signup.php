@@ -52,7 +52,7 @@ else if (isset($_POST['signinLink'])){
 <script src="scripts/signup.js"></script>
 <div class="text-center" id="signin">
 <form name="signupForm" action="signup.php" method=post onsubmit="return validateSignup(this)" class="form-signin">
-    <img class="mb-4" src="Images/Pets/General/antuhelm.png" alt="" width="111" height="111">
+    <img class="mb-4" src="Images/Pets/General/antuhelm512.png" alt="" width="111" height="111">
     <h1 class="h3 mb-3 font-weight-normal">Sign up</h1>
     <div class="form-group">
         <div class="form-row">

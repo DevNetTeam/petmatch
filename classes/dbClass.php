@@ -38,7 +38,6 @@ class dbClass
         // retrieve the keys of the array (column titles)
         $fields = array_keys($form_data);
         // build the query
-        //todo: may need to update to CURRENT_TIMESTAMP
         $sql = "INSERT INTO ".$table_name."(`".implode('`,`', $fields)."`)VALUES('".implode("','", $form_data)."')";
         //echo "<br>$sql<br>";
         $this->connection->query($sql);

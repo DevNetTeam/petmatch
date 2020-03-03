@@ -75,7 +75,6 @@ if ($P_HR_Arr != null){   //$P_HR holds all Pet_HelpRequest where pet to delete 
     foreach ($P_HR_Arr as $phr){
     $HelpRequest = $db->getObjectsGeneral("helprequests", " WHERE `helpID`='".$phr->getHelpID()."'", "HelpRequest");
         $k = $HelpRequest[0];    //$k is now HelpRequest
-        //todo: get and show pets in each HelpRequest!!
         $str="<div class='card'>";
         //$str.="<table><tr><td width='30%'>";
         $str.="Help ID: ".$k->getHelpID()."<br>";

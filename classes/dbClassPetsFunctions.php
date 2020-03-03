@@ -38,7 +38,6 @@ class dbClassPetsFunctions
     //-----------------------------------------------------------------------------------------------Images:
     function loadPetImageByID($petID) {
         //uploads an image for pet with id given to function
-        //todo: check size, more formats maybe?
         //printing $_FILES array:
         //echo "loadPetImage function. ID = ".$petID."<br>";
         //echo "<pre>";
