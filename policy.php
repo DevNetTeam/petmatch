@@ -1,23 +1,6 @@
 <?php
-//unset($_SESSION);
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
-}
-//  --------------------Debugging:
-$show_nav_help = 0;     //0 or 1
-if ($show_nav_help){
-    echo "_POST:<br>";
-    echo "<pre>";
-    var_dump($_POST);
-    echo "</pre>";
-    echo "_SESSION:<br>";
-    echo "<pre>";
-    var_dump($_SESSION);
-    echo "</pre>";
-    echo "_GET:<br>";
-    echo "<pre>";
-    var_dump($_GET);
-    echo "</pre>";
 }
 //-------------------------------------------------TOP OF PAGE
 include_once "headerTop.php";
@@ -64,8 +47,6 @@ if (isset($_SESSION) && isset($_SESSION['user']))
     else if (isset($_SESSION['nextPage']) && $_SESSION['nextPage']!=""){
         include_once $_SESSION['nextPage'];
     }
-    else
-        include_once "HelpRequestsAll.php";
 }
 else
 {

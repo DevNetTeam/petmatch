@@ -38,9 +38,9 @@ if (session_status() == PHP_SESSION_NONE) {
                             Info
                         </a>
                         <div class="dropdown-menu" aria-labelledby="Help Requests">
-                            <a class="dropdown-item" href="?helpRequestsAll">Policy</a>
-                            <a class="dropdown-item" href="?myHelpRequests">Help</a>
-                            <a class="dropdown-item" href="?helpRequestAdd">Terms</a>
+                            <a class="dropdown-item" href="policy.php">Policy</a>
+                            <a class="dropdown-item" href="help.php">Help</a>
+                            <a class="dropdown-item" href="terms.php">Terms</a>
                         </div>
                     </li>
                     <?php
