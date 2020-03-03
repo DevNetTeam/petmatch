@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require_once "classes/dbClass.php";
 require_once "classes/User.php";
-//-------------------------------------------if form information sent:
+//----------------------------------------------------------------------------------------if form information sent:
 if (isset($_POST['SignInDataSent']))  //if sign in form was submitted
 {
     $db = new dbClass();
@@ -14,7 +14,7 @@ if (isset($_POST['SignInDataSent']))  //if sign in form was submitted
     $ans = $db->signinUser($mail, $pass);
     if ($ans ==1){
         $_SESSION['userMessage']="Welcome back!";
-        // status
+        $_SESSION['nextPage']="HelpRequestsAll.php";
         $_SESSION['userMessageStatus']=1;
     }
     else {
@@ -31,7 +31,7 @@ else if (isset($_POST['signupLink'])){
     exit();
 }
 ?>
-<!---------------------------------->
+<!------------------------------------------------------->
 <div class="text-center" id="signin">
 <form action="signin.php" method=post class="form-signin">
     <img class="mb-4" src="Images/Pets/General/antuhelm.png" alt="" width="111" height="111">
@@ -43,7 +43,7 @@ else if (isset($_POST['signupLink'])){
     <button class="btn btn-lg btn-primary btn-block" type="submit" name="SignInDataSent">Sign in</button>
 </form>
 <br>
-    <!--
+<!--
 <form action="signin.php" method=post>
     <label>Don't have an account yet?</label>
     <button class="buttonLooksLikeLink" type="submit" name="signupLink"><b>Sign Up!</b></button>
@@ -51,8 +51,4 @@ else if (isset($_POST['signupLink'])){
 -->
     <label>Don't have an account yet?</label>
     <a class="nav-link" href="?signUp">Sign Up!</a>
-    <!---
-    <label>Continue without login</label>
-    <a class="nav-link" href="mainguest.php">Continue</a>
-    ---->
 </div>

@@ -1,5 +1,7 @@
 <?php
 require_once "User.php";
+require_once "Interested.php";
+require_once "Ranking.php";
 //class connects to data base and performs basic activities like inserting or deleting records
 class dbClass
 {
@@ -29,6 +31,7 @@ class dbClass
     public function disconnect(){
         $this->connection = null;
     }
+
     //--------------------------------------------------General DB functions:
     public function insertLine($table_name, $form_data){
         //function inserts new line to table in DB
@@ -36,6 +39,7 @@ class dbClass
         // retrieve the keys of the array (column titles)
         $fields = array_keys($form_data);
         // build the query
+        //todo: may need to update to CURRENT_TIMESTAMP
         $sql = "INSERT INTO ".$table_name."(`".implode('`,`', $fields)."`)VALUES('".implode("','", $form_data)."')";
         //echo "<br>$sql<br>";
         $this->connection->query($sql);
@@ -96,7 +100,6 @@ class dbClass
         $objArray = Array();
         $sql="SELECT * FROM `".$table_name."`".$condition;
         //echo "<br>".$sql."<br>";                                         //print object
-
         $result = $this->connection->query($sql);
         while ($row = $result->fetchObject($objectToFetch)){
             $objArray[] = $row;
@@ -128,7 +131,7 @@ class dbClass
         $this->connection->query($sql);
         $this->disconnect();
     }
-    //-----------------------------------------------Additional (required here):
+    //---------------------------------------------Additional (required here):
     function stringToXml($htmlStr)
     {
         $xmlStr = str_replace('<', '&lt;', $htmlStr);
@@ -165,7 +168,7 @@ class dbClass
             $verify=password_verify($signinPass,$realPassword);
             if ($verify)
             {
-                $_SESSION['user']= $userFromDB->getUserID();  //saving user's ID in $_SESSION
+                $_SESSION['user']= $userFromDB->getUserID();                     //saving user's ID in $_SESSION
                 $ans = 1;
             }
             else
@@ -215,7 +218,7 @@ class dbClass
         }
         $this->disconnect();
     }
-//---------------------------------------pets:
+//-------------------------------------------------------------------------pets:
     public function printPetBasic(Pet $p)
     {
         $this->connect();
@@ -293,12 +296,12 @@ class dbClass
         $this->disconnect();
         return $location.$filename;
     }
-    //-----------------------------------------------------------------------------------------email:
+    //-----------------------------------------------------------------------------------
     public function sendMail($userEmail, $emlFileName){
         $text="Welcome to PetMatchMaking!\nPlease contact us with any question.\n\n";
-        $text.="Start by adding your pets.\n\n";
+        $text.="Start by adding your pets, exploring existing help requests and add your own.\n\n";
         $text.="*Please be careful when contacting people from across the web.";
-        $tpl=file_get_contents("mail\\".$emlFileName.".eml");    //gets email template from eml file
+        $tpl=file_get_contents("mail\\".$emlFileName.".eml");     //gets email template from eml file
         $mail=$tpl;
         $mail=strtr($mail,array("{TO}"=>$userEmail,"{TEXT}"=>$text,));
         list($head,$body)=preg_split("/\r?\n\r?\n/s",$mail,2);
@@ -308,7 +311,7 @@ class dbClass
     public function sendMail_ContactUs($emlFileName, $title, $message, $user_name, $user_email, $details) {
         $tpl=file_get_contents("mail\\".$emlFileName.".eml");     //gets email template from eml file
         $mail=$tpl;
-        $mail=strtr($mail,array("{TO}"=>"test@antu.work","{MESSAGE}"=>$message, "{TOPIC}"=>$title, "{EMAIL}"=>$user_email, "{NAME}"=>$user_name, "{USER_DETAILS}"=>$details));
+        $mail=strtr($mail,array("{TO}"=>"admin@buda.ninja","{MESSAGE}"=>$message, "{TOPIC}"=>$title, "{EMAIL}"=>$user_email, "{NAME}"=>$user_name, "{USER_DETAILS}"=>$details));
         list($head,$body)=preg_split("/\r?\n\r?\n/s",$mail,2);
         mail("","",$body,$head);
         return 1;

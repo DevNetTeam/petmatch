@@ -7,11 +7,11 @@ require_once "classes/dbClassPetsFunctions.php";
 require_once "classes/Pet.php";
 $db = new dbClass();
 $dbp = new dbClassPetsFunctions();
-//--------------------------------------------------------if form information sent:
+//-----------------------------------------------------------if form information sent:
 reset($_POST);
 $first_key = key($_POST);   //command + ID of pet to edit
 //echo $first_key."<br>";
-if (isset($_POST['addpet']))                                 //if add pet clicked
+if (isset($_POST['addpet']))                                    //if add pet clicked
 {
     //checking number of user's pets in database:
     $petsArr = $dbp->getPetsArrayByUserID($_SESSION['user']);
@@ -54,6 +54,7 @@ else if (substr($first_key, 0, 8) === "delimage")  //if delete pet's image butto
     $petID = substr($first_key, 8);
     $dbp = new dbClassPetsFunctions();
     $dbp->deletePetImageByID($petID);
+
     $_SESSION['nextPage']="myPets.php";
     header("Location: main.php");
     die();
@@ -62,9 +63,11 @@ else if (substr($first_key, 0, 8) === "delimage")  //if delete pet's image butto
 unset($_SESSION['petToDelete']);
 unset($_SESSION['petToEdit']);          //$_SESSION['petToEdit'] is used in page to determine which pet to edit
 //echo "<h3>My Pets</h3>";
+//----------------------------------------------------------------------------------------
 //$myPetsArray = $db->getPetsByEmail($_SESSION['user']);        //replaced with next line:
 $dbp = new dbClassPetsFunctions();
 $myPetsArray = $dbp->getPetsArrayByUserID($_SESSION['user']);
+//----------------------------------------------------------------------------------------
     $mypetsstr="";
     $mypetsstr.="<div class='card' id='userProfileCard'>";
     $mypetsstr.="<h5 class='card-header'>My pets</h5>";
@@ -74,7 +77,7 @@ $myPetsArray = $dbp->getPetsArrayByUserID($_SESSION['user']);
     $mypetsstr.="<button type='submit' class='btn btn-primary' name='addpet'>Add Pet</button>";
     $mypetsstr.="</form><br>";
 if ($myPetsArray == null)
-    $mypetsstr.="It's a little empty here! Add your pets :).";
+    $mypetsstr.="It's a little empty here! Add your pets and get some request.";
 else
 {
     $mypetsstr.="<div class='card-deck'>";

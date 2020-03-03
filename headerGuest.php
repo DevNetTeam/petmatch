@@ -1,10 +1,9 @@
+
 <header>
     <div class="fixed-top">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="navbar-brand" href="main.php">PetMatchMaking</div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <div class="navbar-brand" href="#">PetMatchMaking</div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">

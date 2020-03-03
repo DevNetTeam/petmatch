@@ -1,5 +1,4 @@
 Dog
 Cat
-
 goldfish
 Other

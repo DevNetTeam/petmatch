@@ -10,20 +10,18 @@ if ($show_nav_help){
     echo "<pre>";
     var_dump($_POST);
     echo "</pre>";
-    //
     echo "_SESSION:<br>";
     echo "<pre>";
     var_dump($_SESSION);
     echo "</pre>";
-    //
     echo "_GET:<br>";
     echo "<pre>";
     var_dump($_GET);
     echo "</pre>";
 }
-//---------------------------------------------------------------------TOP OF PAGE
+//------------------------------------------------ TOP OF PAGE
 include_once "headerTop.php";
-//  ------------------------------------------------------------------SIGNED IN USER
+//  ---------------------------------------------SIGNED IN USER
 if (isset($_SESSION) && isset($_SESSION['user']))
 {
     //------------------------------header loading:
@@ -45,6 +43,15 @@ if (isset($_SESSION) && isset($_SESSION['user']))
     else if (isset($_GET['myPets'])){
         include_once "myPets.php";
     }
+    else if (isset($_GET['helpRequestsAll'])){
+        include_once "HelpRequestsAll.php";
+    }
+    else if (isset($_GET['myHelpRequests'])){
+        include_once "myHelpRequests.php";
+    }
+    else if (isset($_GET['helpRequestAdd'])){
+        include_once "helpRequestAdd.php";
+    }
     else if (isset($_GET['admin'])){
         include_once "admin.php";
     }
@@ -57,10 +64,12 @@ if (isset($_SESSION) && isset($_SESSION['user']))
     else if (isset($_SESSION['nextPage']) && $_SESSION['nextPage']!=""){
         include_once $_SESSION['nextPage'];
     }
+    else
+        include_once "HelpRequestsAll.php";
 }
 else
 {
-    //  -------------------------------------------------------------------NOT SIGNED IN
+    //  --------------------------------------------------------------NOT SIGNED IN
     //------------------------------header loading:
     include_once "headerGuest.php";
     //------------------------------message loading:

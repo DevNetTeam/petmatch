@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<markers>
+    <marker id="69" name="Help" address="chrdri" lat="42.6955369" lng="23.2537359" type="Help"/>
+    <marker id="71" name="Meet" address="Kremikovsky Monastery" lat="42.7901023" lng="23.4890506" type="Meet"/>
+    <marker id="73" name="Match" address="Vasil Levski Monument" lat="42.6966725" lng="23.3331406" type="Match"/>
+    <marker id="74" name="Help" address="St. Alexander Nevsky Cathedral" lat="42.6959649" lng="23.3315017" type="Help"/>
+    <marker id="79" name="Match" address="Sofia" lat="42.6955369" lng="23.2537359" type="Match"/>
+    <marker id="83" name="Help" address="Burgas" lat="42.526627" lng="27.381755" type="Help"/>
+    <marker id="84" name="Match" address="Plovdiv" lat="42.1441792" lng="24.7057692" type="Match"/>
+</markers>

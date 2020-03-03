@@ -6,9 +6,11 @@ require_once "classes/dbClass.php";
 require_once "classes/User.php";
 $db = new dbClass();
 $signedInUser=$db->getSignedInUserData();
-//------------------------------------------------------------------ if form information sent:
+
+//------------------------------------------------------------------if form information sent:
 if (isset($_POST['sent']))  //if form was submitted
 {
+    //TODO: js validation to fields
     //$tempUser = new User($_POST['pass'], $_POST['fname'], $_POST['lname'], $_POST['mail']);
     $signedInUser->setUserFName($_POST['fname']);
     $signedInUser->setUserLName($_POST['lname']);
@@ -31,7 +33,7 @@ if (isset($_POST['sent']))  //if form was submitted
     */
 }
 ?>
-<!--------------->
+<!------------------------------------------------>
 <div class="card">
     <h5 class="card-header">Edit Profile:</h5>
     <div class="card-body">
@@ -111,6 +113,3 @@ if (isset($_POST['sent']))  //if form was submitted
         </form>
     </div>
 </div>
-<!------->
-
-

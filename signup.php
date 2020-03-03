@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
 require_once "classes/dbClass.php";
 require_once "classes/User.php";
 require_once "classes/dbClassUserFunctions.php";
-//--------------------------------------- if form information sent:
+//----------------------------------------------------------------------------------------if form information sent:
 if (isset($_POST['newUserSent']))  //if sign up form was submitted
 {
     $db = new dbClass();
@@ -20,7 +20,7 @@ if (isset($_POST['newUserSent']))  //if sign up form was submitted
         'userRegisterTime' => date("Y-m-d H:i:s"),
         'userStatus' => "user",
     );
-    if ($db->getObjects("users","userEmail", $_POST['mail'], "User") == null)  //checking if user's mail already exists
+    if ($db->getObjects("users","userEmail", $_POST['mail'], "User") == null)                                   //checking if user's mail already exists
     {
         //$db->insertLine("users", $data_arr);            //inserting new user
         $dbu = new dbClassUserFunctions();
@@ -47,6 +47,7 @@ else if (isset($_POST['signinLink'])){
     exit();
 }
 ?>
+<!------------------------------------------------------->
 <!-- signup validation: -->
 <script src="scripts/signup.js"></script>
 <div class="text-center" id="signin">
@@ -64,7 +65,7 @@ else if (isset($_POST['signinLink'])){
         </div>
     </div>
     <div class="form-group">
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"  name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" title="Please enter a valid email address">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"  name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,9}$" required="required" title="Please enter a valid email address">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
@@ -81,16 +82,12 @@ else if (isset($_POST['signinLink'])){
     <label id="message"> </label>
 </form>
     <br>
-    <!--
+    <!----
 <form action="signup.php" method=post>
     <label>Already have an account?</label>
     <button class="buttonLooksLikeLink" type="submit" name="signinLink"><b>Sign In!</b></button>
 </form>
--->
+    ----->
     <label>Already have an account?</label>
     <a class="nav-link" href="?signIn">Sign in!</a>
-    <!---
-    <label>Continue without login</label>
-    <a class="nav-link" href="mainguest.php">Continue</a>
-    ---->
 </div>

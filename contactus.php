@@ -5,7 +5,7 @@ if (session_status() == PHP_SESSION_NONE) {
 require_once "classes/dbClass.php";
 require_once "classes/User.php";
 require_once "classes/dbClassUserFunctions.php";
-//--filling forms automatically of signed in users:
+//filling forms automatically of signed in users:
 $name = "";
 $email = "";
 if (isset($_SESSION['user'])){
@@ -68,7 +68,7 @@ if (isset($_POST['contact_form_sent']))
                 </div>
             </div>
         </div>
-        <!------->
+        <!---->
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
@@ -89,11 +89,11 @@ if (isset($_POST['contact_form_sent']))
             </div>
             <div class="form-row">
                 <div class="col">
-                    <input type="text" class="form-control" placeholder="Your email address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required="required" value="<?php echo $email?>">
+                    <input type="text" class="form-control" placeholder="Your email address" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,9}$" required="required" value="<?php echo $email?>">
                 </div>
             </div>
         </div>
-        <!------>
+        <!---->
         <button type="submit" class="btn btn-primary float-right" name="contact_form_sent">Message us</button>
     </form>
 </div>

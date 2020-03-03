@@ -8,9 +8,7 @@ if (session_status() == PHP_SESSION_NONE) {
         <!------------------------------------------------------>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="navbar-brand" href="#">PetMatchMaking</div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" 
-                    data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
-                    aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -25,15 +23,23 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a class="nav-link" href="?myPets">My pets</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a 
-                        class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" 
-                        data-toggle="dropdown" aria-haspopup="true" 
-                        aria-expanded="false">New messages
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Requests
                         </a>
                         <div class="dropdown-menu" aria-labelledby="Help Requests">
-                            <a class="dropdown-item" href="?helpRequestsAll">All messages</a>
-                            <a class="dropdown-item" href="?myHelpRequests">My messages</a>
-                            <a class="dropdown-item" href="?helpRequestAdd">Add a new message</a>
+                            <a class="dropdown-item" href="?helpRequestsAll">All requests</a>
+                            <a class="dropdown-item" href="?myHelpRequests">My request</a>
+                            <a class="dropdown-item" href="?helpRequestAdd">Add a new request</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Info
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Help Requests">
+                            <a class="dropdown-item" href="?helpRequestsAll">Policy</a>
+                            <a class="dropdown-item" href="?myHelpRequests">Help</a>
+                            <a class="dropdown-item" href="?helpRequestAdd">Terms</a>
                         </div>
                     </li>
                     <?php

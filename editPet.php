@@ -7,10 +7,10 @@ require_once "classes/User.php";
 require_once "classes/Pet.php";
 require_once "classes/dbClassPetsFunctions.php";
 $db = new dbClass();
-if (isset($_SESSION['petToEdit'])){      //editing pet
+if (isset($_SESSION['petToEdit'])){     //editing pet
     $tempPet = $db->getPetByID($_SESSION['petToEdit']);
 }
-else{                                 //adding new pet
+else{                                   //adding new pet
     $tempPet = new Pet();
 }
 //------------------------------if form information sent:
@@ -19,7 +19,6 @@ echo "_POST:<br>";
 echo "<pre>";
 var_dump($_POST);
 echo "</pre>";
-//
 echo "_SESSION:<br>";
 echo "<pre>";
 var_dump($_SESSION);
@@ -44,7 +43,7 @@ if (isset($_POST['sent']))
     );
     if (isset($_SESSION['petToEdit'])) {     //editing pet
         $db->updateLine("pets", "petID", $tempPet->getPetID(), $data_arr);  //updating 'pet'
-        $dbp->loadPetImageByID($tempPet->getPetID());                       //uploading new image
+        $dbp->loadPetImageByID($tempPet->getPetID());                                                 //uploading new image
     }
     else{
         $db->insertLine("pets", $data_arr);                                             //inserting new line to 'pets'
@@ -89,7 +88,7 @@ else{
     $header = "Adding new pet";
 }
 ?>
-<!------------------------------------------------------->
+<!---------------------------------------->
 <div class="d-flex justify-content-center">
 <div class="card">
     <h5 class="card-header"><?php echo $header?></h5>
@@ -140,19 +139,13 @@ else{
                         </div>
                     </div>
                 </div>
-<!--
+                <!---
                     <div class="form-row">
                         <div class="col">
-                            <
-                            input type="text" class="form-control" 
-                            placeholder="Temper and general behaviour" 
-                            name="ptemper" 
-                            value="
-                            <?php echo $tempPet->getPetTemper()?>
-                            ">
+                            <input type="text" class="form-control" placeholder="Temper and general behaviour" name="ptemper" value="<?php echo $tempPet->getPetTemper()?>">
                         </div>
                     </div>
--->
+                --->
                 <div class="form-group">
                 <div class="form-row">
                         <div class="col">
