@@ -47,7 +47,7 @@ else if (isset($_POST['signinLink'])){
     exit();
 }
 ?>
-<!------------------------------------------------------->
+<!-------------------------------------->
 <!-- signup validation: -->
 <script src="scripts/signup.js"></script>
 <div class="text-center" id="signin">

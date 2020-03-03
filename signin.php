@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 require_once "classes/dbClass.php";
 require_once "classes/User.php";
-//----------------------------------------------------------------------------------------if form information sent:
+//-------------------------------------------------------------------if form information sent:
 if (isset($_POST['SignInDataSent']))  //if sign in form was submitted
 {
     $db = new dbClass();

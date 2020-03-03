@@ -14,7 +14,7 @@ if (isset($_SESSION['user'])){
     $name = $user->getUserFName()." ".$user->getUserLName();
     $email = $user->getUserEmail();
 }
-//-----------------form sent handling:
+//------------------form sent handling:
 if (isset($_POST['contact_form_sent']))
 {
     if (isset($_SESSION['user'])){

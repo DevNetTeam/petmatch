@@ -147,7 +147,7 @@ $helpTypeArr = array_unique($helpTypeArr);
                 </div>
             </div>
             </div>
-            <button type="submit" class="btn btn-primary" name="sort">Refine</button>
+            <button type="submit" class="btn btn-primary" name="sort">Filter</button>
             <!---<button type="submit" class="btn btn-primary" name="ShowOnMap">Show (All) On Map</button>--->
         </div>
     </form>

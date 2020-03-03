@@ -77,7 +77,7 @@ echo $str;
 echo "<br>";
 echo "*Please allow pop-ups to see report";
 echo "</div></div></div>";
-//---------------------------------------------pet types:
+//------------------------------------------pet types:
 $str="";
 $str.=  "<div class='d-flex justify-content-center'>";
 $str.=  "<div class='card'>";
