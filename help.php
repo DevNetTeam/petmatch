@@ -75,3 +75,11 @@ else
 }
 $_SESSION['nextPage']="";
 include_once "footer.php";
+?>
+<!-------------------------------------------------------------------------->
+<!DOCTYPE html> 
+<html lang="en"> 
+    <head> 
+        <title>PetMatchmaking</title>         
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
