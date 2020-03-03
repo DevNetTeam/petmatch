@@ -41,9 +41,9 @@ class dbClassUserFunctions
         {
             $ans = -1;
         }
-        else                        //user found:
+        else                            //user found:
         {
-            //verifying password:
+            // verifying password:
             $realPassword = $userFromDB->getUserPassword();
             $verify=password_verify($entered,$realPassword);
             if ($verify)

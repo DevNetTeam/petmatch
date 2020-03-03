@@ -42,11 +42,11 @@ if (isset($_POST['sent']))
         'userID' => $_SESSION['user'],
     );
     if (isset($_SESSION['petToEdit'])) {     //editing pet
-        $db->updateLine("pets", "petID", $tempPet->getPetID(), $data_arr);  //updating 'pet'
-        $dbp->loadPetImageByID($tempPet->getPetID());                                                 //uploading new image
+        $db->updateLine("pets", "petID", $tempPet->getPetID(), $data_arr);      //updating 'pet'
+        $dbp->loadPetImageByID($tempPet->getPetID());                           //uploading new image
     }
     else{
-        $db->insertLine("pets", $data_arr);                                             //inserting new line to 'pets'
+        $db->insertLine("pets", $data_arr);                                     //inserting new line to 'pets'
         $petInserted = $db->getObjectsGeneral("pets", " WHERE `userID`='".$_SESSION['user']."'ORDER  BY `petRegisterTime` DESC LIMIT  1", "Pet");    //getting last 'pet' inserted
         $dbp->loadPetImageByID($petInserted[0]->getPetID());                                         //uploading new image attached to ID of last pet inserted
     }

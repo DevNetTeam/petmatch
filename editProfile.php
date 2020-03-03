@@ -6,7 +6,6 @@ require_once "classes/dbClass.php";
 require_once "classes/User.php";
 $db = new dbClass();
 $signedInUser=$db->getSignedInUserData();
-
 //------------------------------------------------------------------if form information sent:
 if (isset($_POST['sent']))  //if form was submitted
 {

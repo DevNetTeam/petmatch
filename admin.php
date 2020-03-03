@@ -6,7 +6,7 @@ require_once "classes/dbClass.php";
 require_once "classes/User.php";
 require_once "classes/dbClassPetsFunctions.php";
 $db = new dbClass();
-//---------------------------------------------------------------------
+//----------------------------------------------------------------------
 reset($_POST);
 $first_key = key($_POST);
 if (substr($first_key, 0, 13) === "RemovePetType") // deleting pet type:

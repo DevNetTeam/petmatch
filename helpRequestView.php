@@ -27,9 +27,9 @@ if (isset($_POST['redirect'])) {    //redirecting user after like was clicked
 if (isset($_SESSION['helpRequestView']))
 {
     $helpRequestID = $_SESSION['helpRequestView'];
-    $help = $dbhr->getHelpRequestByID($helpRequestID);  //help request
+    $help = $dbhr->getHelpRequestByID($helpRequestID);      //help request
     $user = $dbu->getUserByID($help->getUserID());          //user
-    $pets = $dbp->getPetsArrayByHelpID($helpRequestID); //array of pets in help request
+    $pets = $dbp->getPetsArrayByHelpID($helpRequestID);     //array of pets in help request
     if ($pets == null)
     {
         $petsStr="No pets in request";
@@ -196,11 +196,11 @@ if (isset($_SESSION['helpRequestView']))
   </div>
 </div>
 <?php
-    //------------------------------------------------------ map view:
+    //-----------------------------------------------------map view:
     $str="";
     $str.="<div id='map_singleDot' class='card'></div><br>";
     echo $str;
-    //------------------------------------------------------ Like:
+    //-------------------------------------------------------Like:
     if ($help->getUserID() != $_SESSION['user'])
     {
         $dbi = new dbClassInterested();
@@ -268,9 +268,6 @@ if (isset($_SESSION['helpRequestView']))
         },
         Match: {
             label: 'H'
-        }
-        Other: {
-            label: 'O'
         }
     };
     function initMap() {
