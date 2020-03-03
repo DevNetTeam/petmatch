@@ -86,8 +86,7 @@
     function doNothing() {}
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfRbSTsQxwFkIlX2BuvQCgUglN8Hun-U&callback">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfRbSTsQxwFkIlX2BuvQCgUglN8Hun-U&callback=initMap">
 </script>
-<!-- remove =initMap -->
 </body>
 </html>
