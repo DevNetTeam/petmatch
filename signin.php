@@ -34,7 +34,7 @@ else if (isset($_POST['signupLink'])){
 <!------------------------------------------------------->
 <div class="text-center" id="signin">
 <form action="signin.php" method=post class="form-signin">
-    <img class="mb-4" src="Images/Pets/General/antuhelm.png" alt="" width="111" height="111">
+    <img class="mb-4" src="Images/Pets/General/antuhelm512.png" alt="" width="111" height="111">
         <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus name="mail">

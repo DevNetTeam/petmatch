@@ -1,19 +1,16 @@
 <?php
 require_once "dbClass.php";
-
 //class represents a HelpRequest
 class HelpRequest
 {
     private $helpID;
     private $userID;
-
     private $helpLocLat;
     private $helpLocLng;
     private $helpLocCity;
     private $helpLocStreet;
     private $helpLocNum;
     private $helpLocCountry;
-
     private $helpRegisterTime;
     private $helpStartTime;
     private $helpEndTime;
@@ -22,18 +19,14 @@ class HelpRequest
     private $helpType;
     private $userPhone;
     private $helpStatus;
-
-
     public function getUserPhone()
     {
         return $this->userPhone;
     }
-
     public function setUserPhone($userPhone): void
     {
         $this->userPhone = $userPhone;
     }
-
     public function getHelpID()
     {
         return $this->helpID;
@@ -158,10 +151,4 @@ class HelpRequest
     {
         $this->helpStatus = $helpStatus;
     }
-
-
-
-
-
 }
-

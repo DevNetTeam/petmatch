@@ -15,7 +15,7 @@ $today = date("Y-m-d H:i:s");
 $today = substr($today, 0, 10);
 $oneyearfromnow = (string)((int)substr($today, 0, 4)+1).substr($today, 4, 6);
 //echo "<br>".$oneyearfromnow;
-//----------------------------------------------------------------------------------------if form information sent:
+//---------------------------------------------------------------------------if form information sent:
 if (isset($_POST['helpRequestSent']))
 {
     echo "_POST:<br>";
@@ -77,9 +77,6 @@ if (isset($_POST['helpRequestSent']))
     die();
 }
 ?>
-<!--
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>    <!-- jquery -->
-<!-- google maps script:    -->
 <script>
     //checkbox field add:
     jQuery(document).ready(function() {
@@ -155,7 +152,7 @@ if (isset($_POST['helpRequestSent']))
         }
     }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfRbSTsQxwFkIlX2BuvQCgUglN8Hun-U&libraries=places&callback=initAutocomplete"
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZppJHPHXdY3_nK8EWiXtBdrjO8poDxcs-U&libraries=places&callback=initAutocomplete"
         async defer></script>
 <script>    <!-- form validation -->
     function validateForm() {

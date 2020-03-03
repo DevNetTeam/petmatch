@@ -1,10 +1,7 @@
 <?php
-
 require_once "dbClass.php";
 require_once "Pet.php";
 require_once "Pet_HelpRequest.php";
-
-
 //class acts as an additional layer between dbClass and site files
 //contains functions regarding "pets" table and uses functions in dbClass
 class dbClassUserFunctions
@@ -15,16 +12,13 @@ class dbClassUserFunctions
         /*
         foreach ($h as $k=>$v)
         {
-
             if (is_string($v)){
                 $h[$k] = $db->stringToXml($h[$k]);
             }
-
         }
         */
         $db->insertLine("users",$h);
     }
-
     public function getUserByID($ID){
         $db = new dbClass();
         $uArr = $db->getObjectsGeneral("users", " WHERE `userID`='".$ID."'", "User");
@@ -33,7 +27,6 @@ class dbClassUserFunctions
             $u = $uArr[0];
         return $u;
     }
-
     public function getUserByEmail($email){
         $db = new dbClass();
         $uArr = $db->getObjectsGeneral("users", " WHERE `userEmail`='".$email."'", "User");
@@ -42,7 +35,6 @@ class dbClassUserFunctions
             $u = $uArr[0];
         return $u;
     }
-
     public function verifyPassword($entered, $userID){
         $userFromDB = $this->getUserByID($userID);
         if ($userFromDB == null)    //user not found:
@@ -54,7 +46,6 @@ class dbClassUserFunctions
             //verifying password:
             $realPassword = $userFromDB->getUserPassword();
             $verify=password_verify($entered,$realPassword);
-
             if ($verify)
             {
                 $ans = 1;
@@ -66,11 +57,6 @@ class dbClassUserFunctions
         }
         return $ans;
     }
-
     public function changePassword($newPassword, $userID){
-
     }
-
-
-
 }

@@ -31,7 +31,6 @@ class dbClass
     public function disconnect(){
         $this->connection = null;
     }
-
     //--------------------------------------------------General DB functions:
     public function insertLine($table_name, $form_data){
         //function inserts new line to table in DB
