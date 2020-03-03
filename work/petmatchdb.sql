@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2020 at 01:14 PM
+-- Generation Time: Mar 03, 2020 at 04:56 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -58,7 +58,10 @@ INSERT INTO `helprequests` (`helpID`, `userID`, `helpLocLat`, `helpLocLng`, `hel
 (143, 13, 42.784588, 23.501190, 'София', '', '', 'България', '2020-03-03 12:27:33', '2020-03-07 00:00:00', '0000-00-00 00:00:00', '', 'sex', 'Meet', '1234567890', 2),
 (144, 13, 42.784588, 23.501190, 'София', '', '', 'България', '2020-03-03 12:30:10', '2020-03-05 00:00:00', '0000-00-00 00:00:00', 'матцх', 'match', 'Meet', '1234567890', 2),
 (145, 1, 42.784588, 23.501190, 'София', '', '', 'България', '2020-03-03 12:37:03', '2020-03-06 00:00:00', '0000-00-00 00:00:00', 'meet', 'meet', 'Help', '1234567890', 1),
-(146, 13, 42.709538, 23.313438, 'София', '', '', 'България', '2020-03-03 13:08:52', '2020-03-07 00:00:00', '0000-00-00 00:00:00', '', 'Среща за сеХ', 'Meet', '1234567890', 1);
+(146, 13, 42.709538, 23.313438, 'София', '', '', 'България', '2020-03-03 13:08:52', '2020-03-07 00:00:00', '0000-00-00 00:00:00', '', 'Среща за сеХ', 'Meet', '1234567890', 1),
+(147, 13, 42.648155, 23.409044, 'София', 'Жилищен комплекс Дружба 2', '', 'България', '2020-03-03 13:34:51', '2020-03-04 00:00:00', '0000-00-00 00:00:00', '', 'Разходка в парка', 'Meet', '1234567890', 1),
+(148, 14, 42.677315, 23.297316, 'София', '', '', 'България', '2020-03-03 13:48:16', '2020-03-04 00:00:00', '0000-00-00 00:00:00', 'Nema kaja', 'Foof', 'Help', '123456789', 1),
+(149, 14, 42.677315, 23.297316, 'София', '', '', 'България', '2020-03-03 13:49:46', '2020-03-05 00:00:00', '0000-00-00 00:00:00', '100', 'Ranuuu', 'Match', '1234567890', 1);
 
 -- --------------------------------------------------------
 
@@ -80,9 +83,11 @@ INSERT INTO `interested` (`helpID`, `interestedUserID`, `status`) VALUES
 (139, 13, 1),
 (140, 13, 1),
 (142, 13, 1),
+(142, 14, 1),
 (143, 1, 1),
 (144, 1, 1),
-(146, 1, 1);
+(146, 1, 1),
+(147, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +115,8 @@ CREATE TABLE `pets` (
 
 INSERT INTO `pets` (`petID`, `userID`, `petName`, `petType`, `petBirthday`, `petSex`, `petFood`, `petTemper`, `petAbout`, `petStatus`, `petRegisterTime`) VALUES
 (61, 1, 'Antu', 'Dog\r\n', '2009-12-17', 'male', 'Hills Science Plan Adult', '', 'Akita', 1, '2020-03-02 22:55:17'),
-(62, 13, 'Cat', 'Cat', '0000-00-00', 'female', '', '', 'Nrun', 1, '2020-03-03 11:54:35');
+(62, 13, 'Cat', 'Cat', '0000-00-00', 'female', '', '', 'Nrun', 1, '2020-03-03 11:54:35'),
+(63, 14, 'Gogo', 'goldfish', '0000-00-00', '', '', '', 'Fish', 1, '2020-03-03 13:44:04');
 
 -- --------------------------------------------------------
 
@@ -136,7 +142,10 @@ INSERT INTO `pets_helprequests` (`petID`, `helpID`, `userID`, `recordRegisterTim
 (61, 145, 1, '2020-03-03 12:37:03'),
 (62, 143, 13, '2020-03-03 12:27:33'),
 (62, 144, 13, '2020-03-03 12:30:10'),
-(62, 146, 13, '2020-03-03 13:08:52');
+(62, 146, 13, '2020-03-03 13:08:52'),
+(62, 147, 13, '2020-03-03 13:34:51'),
+(63, 148, 14, '2020-03-03 13:48:16'),
+(63, 149, 14, '2020-03-03 13:49:46');
 
 -- --------------------------------------------------------
 
@@ -188,7 +197,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userID`, `userEmail`, `userPassword`, `userFName`, `userLName`, `userPhone`, `userBirthday`, `userAbout`, `userRegisterTime`, `userStatus`) VALUES
 (1, '1@gmail.com', '$2y$10$ViIvcTuGmxaOSdoO1mFMte5G01fmwf8paKE0OYW5Zdoz0e/MBZddC', 'Buda', 'Ninja', '', '0000-00-00', '', '2020-03-02 19:12:33', 'admin'),
-(13, 'test@gmail.com', '$2y$10$tdHAgIuylASI4VDRsaloG.ndA4evtjEwk.d/VKic9UmmLUn/l1rkq', 'Test', 'Testov', '', '0000-00-00', '', '2020-03-03 11:54:03', 'user');
+(13, 'test@gmail.com', '$2y$10$tdHAgIuylASI4VDRsaloG.ndA4evtjEwk.d/VKic9UmmLUn/l1rkq', 'Test', 'Testov', '', '0000-00-00', '', '2020-03-03 11:54:03', 'user'),
+(14, '1@buda.ninja', '$2y$10$ZOOGRBq8GcCTXy0Wjkq0EO/0NjJwYisCPne2D7g0y29mQqcy4E07G', 'Bu', 'Nin', '', '0000-00-00', '', '2020-03-03 13:43:34', 'user');
 
 --
 -- Indexes for dumped tables
@@ -246,13 +256,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `helprequests`
 --
 ALTER TABLE `helprequests`
-  MODIFY `helpID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `helpID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `petID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `petID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `rankings`
@@ -264,7 +274,7 @@ ALTER TABLE `rankings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- Constraints for dumped tables

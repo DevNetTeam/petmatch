@@ -273,7 +273,7 @@ if (isset($_SESSION['helpRequestView']))
     function initMap() {
         var map = new google.maps.Map(document.getElementById('map_singleDot'), {
             center: new google.maps.LatLng(42.7219026,24.4196063),
-            zoom: 8
+            zoom: 9
         });
         var infoWindow = new google.maps.InfoWindow;
         // Change this depending on the name of your PHP or XML file
@@ -325,10 +325,9 @@ if (isset($_SESSION['helpRequestView']))
     function doNothing() {}
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfRbSTsQxwFkIlX2BuvQCgUglN8Hun-U&callback">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfRbSTsQxwFkIlX2BuvQCgUglN8Hun-U&callback=initMap">
 </script>
 <?php
-// remove =initMap
 //echo $_SESSION['helpRequestView'];
 //unset($_SESSION['helpRequestView']);
 ?>
