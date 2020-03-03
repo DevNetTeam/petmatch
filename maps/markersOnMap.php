@@ -22,13 +22,13 @@
 <script>
     var customLabel = {
         Help: {
-            label: 'W'
+            label: 'H'
         },
         Meet: {
-            label: 'F'
+            label: 'W'
         },
         Match: {
-            label: 'H'
+            label: 'M'
         }
     };
     function initMap() {
