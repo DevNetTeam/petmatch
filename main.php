@@ -52,6 +52,15 @@ if (isset($_SESSION) && isset($_SESSION['user']))
     else if (isset($_GET['helpRequestAdd'])){
         include_once "helpRequestAdd.php";
     }
+    else if (isset($_GET['policy'])){
+        include_once "policy.php";
+    }
+    else if (isset($_GET['help'])){
+        include_once "help.php";
+    }
+    else if (isset($_GET['terms'])){
+        include_once "terms.php";
+    }
     else if (isset($_GET['admin'])){
         include_once "admin.php";
     }
