@@ -270,10 +270,15 @@ if (isset($_POST['helpRequestSent']))
         </div>
     </div>
     -->
-<div class="form-group">
+    <div class="form-group">
+    <input type="checkbox" name="payment" value="yes" id="paymentOffer"> Offering payment<br>
+        <div id="paymentAmount"></div>
+    </div>
+    <!-- 
         <label>Information:</label>
         <textarea class="form-control" id="paymentOffer" name="payment" rows="3" required></textarea>
-        <div id="paymentAmount"></div>
+    <div id="paymentAmount"></div>
+     -->
     </div>
     <div class="form-group">
         <label>Description:</label>
