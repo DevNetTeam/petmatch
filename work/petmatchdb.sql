@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 03, 2020 at 04:56 PM
+-- Generation Time: Mar 03, 2020 at 05:55 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.2
 
@@ -61,7 +61,8 @@ INSERT INTO `helprequests` (`helpID`, `userID`, `helpLocLat`, `helpLocLng`, `hel
 (146, 13, 42.709538, 23.313438, 'София', '', '', 'България', '2020-03-03 13:08:52', '2020-03-07 00:00:00', '0000-00-00 00:00:00', '', 'Среща за сеХ', 'Meet', '1234567890', 1),
 (147, 13, 42.648155, 23.409044, 'София', 'Жилищен комплекс Дружба 2', '', 'България', '2020-03-03 13:34:51', '2020-03-04 00:00:00', '0000-00-00 00:00:00', '', 'Разходка в парка', 'Meet', '1234567890', 1),
 (148, 14, 42.677315, 23.297316, 'София', '', '', 'България', '2020-03-03 13:48:16', '2020-03-04 00:00:00', '0000-00-00 00:00:00', 'Nema kaja', 'Foof', 'Help', '123456789', 1),
-(149, 14, 42.677315, 23.297316, 'София', '', '', 'България', '2020-03-03 13:49:46', '2020-03-05 00:00:00', '0000-00-00 00:00:00', '100', 'Ranuuu', 'Match', '1234567890', 1);
+(149, 14, 42.677315, 23.297316, 'София', '', '', 'България', '2020-03-03 13:49:46', '2020-03-05 00:00:00', '0000-00-00 00:00:00', '100', 'Ranuuu', 'Match', '1234567890', 1),
+(150, 15, 42.652946, 23.364958, 'София', 'ж.к. Дървеница', '', 'България', '2020-03-03 17:53:53', '2020-03-13 00:00:00', '0000-00-00 00:00:00', '0', 'среща с непознат', 'Meet', '1234567890', 1);
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,8 @@ CREATE TABLE `pets` (
 INSERT INTO `pets` (`petID`, `userID`, `petName`, `petType`, `petBirthday`, `petSex`, `petFood`, `petTemper`, `petAbout`, `petStatus`, `petRegisterTime`) VALUES
 (61, 1, 'Antu', 'Dog\r\n', '2009-12-17', 'male', 'Hills Science Plan Adult', '', 'Akita', 1, '2020-03-02 22:55:17'),
 (62, 13, 'Cat', 'Cat', '0000-00-00', 'female', '', '', 'Nrun', 1, '2020-03-03 11:54:35'),
-(63, 14, 'Gogo', 'goldfish', '0000-00-00', '', '', '', 'Fish', 1, '2020-03-03 13:44:04');
+(63, 14, 'Gogo', 'goldfish', '0000-00-00', '', '', '', 'Fish', 1, '2020-03-03 13:44:04'),
+(64, 15, 'Mara', 'Other', '0000-00-00', '', 'всичко муе', '', 'некво', 1, '2020-03-03 17:53:05');
 
 -- --------------------------------------------------------
 
@@ -145,7 +147,8 @@ INSERT INTO `pets_helprequests` (`petID`, `helpID`, `userID`, `recordRegisterTim
 (62, 146, 13, '2020-03-03 13:08:52'),
 (62, 147, 13, '2020-03-03 13:34:51'),
 (63, 148, 14, '2020-03-03 13:48:16'),
-(63, 149, 14, '2020-03-03 13:49:46');
+(63, 149, 14, '2020-03-03 13:49:46'),
+(64, 150, 15, '2020-03-03 17:53:53');
 
 -- --------------------------------------------------------
 
@@ -198,7 +201,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`userID`, `userEmail`, `userPassword`, `userFName`, `userLName`, `userPhone`, `userBirthday`, `userAbout`, `userRegisterTime`, `userStatus`) VALUES
 (1, '1@gmail.com', '$2y$10$ViIvcTuGmxaOSdoO1mFMte5G01fmwf8paKE0OYW5Zdoz0e/MBZddC', 'Buda', 'Ninja', '', '0000-00-00', '', '2020-03-02 19:12:33', 'admin'),
 (13, 'test@gmail.com', '$2y$10$tdHAgIuylASI4VDRsaloG.ndA4evtjEwk.d/VKic9UmmLUn/l1rkq', 'Test', 'Testov', '', '0000-00-00', '', '2020-03-03 11:54:03', 'user'),
-(14, '1@buda.ninja', '$2y$10$ZOOGRBq8GcCTXy0Wjkq0EO/0NjJwYisCPne2D7g0y29mQqcy4E07G', 'Bu', 'Nin', '', '0000-00-00', '', '2020-03-03 13:43:34', 'user');
+(14, '1@buda.ninja', '$2y$10$ZOOGRBq8GcCTXy0Wjkq0EO/0NjJwYisCPne2D7g0y29mQqcy4E07G', 'Bu', 'Nin', '', '0000-00-00', '', '2020-03-03 13:43:34', 'user'),
+(15, 'liolo@mail.com', '$2y$10$kePCtSJGByG0p0r5BYLbp.BQP2eZwUKvcoirCnLFcqBsqBkqFhDx.', 'liolo', 'liolov', '', '0000-00-00', '', '2020-03-03 17:52:22', 'user');
 
 --
 -- Indexes for dumped tables
@@ -256,13 +260,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `helprequests`
 --
 ALTER TABLE `helprequests`
-  MODIFY `helpID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
+  MODIFY `helpID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=151;
 
 --
 -- AUTO_INCREMENT for table `pets`
 --
 ALTER TABLE `pets`
-  MODIFY `petID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `petID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `rankings`
@@ -274,7 +278,7 @@ ALTER TABLE `rankings`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Constraints for dumped tables
