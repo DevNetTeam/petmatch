@@ -12,7 +12,8 @@ require_once "classes/dbClassInterested.php";
 require_once "classes/User.php";
 require_once "classes/dbClassUserFunctions.php";
 $db = new dbClass();
-//------------------------------------function fills comboBoxes with items from string array 'items'
+//------------------------------------------------------
+//function fills comboBoxes with items from string array 'items'
 function selectItems($items, $selectedoption)
 {
     $text = "";
@@ -35,7 +36,7 @@ $form_helpType="All";
 $form_helpLocCity="All";
 reset($_POST);
 $first_key = key($_POST);
-//--------------------------------------------------------------------- view button is pressed:
+//---------------------------------------------------------------- view button is pressed:
 if (substr($first_key, 0, 4) === "view")
 {
     $first_key = substr($first_key, 4);
@@ -45,14 +46,14 @@ if (substr($first_key, 0, 4) === "view")
     header("Location: main.php");
     die();
 }
-//-------------------------------------------------------------------if "show on map" clicked:
+//--------------------------------------------------------------if "show on map" clicked:
 if (isset($_POST['ShowOnMap']))
 {
     $_SESSION['nextPage']="maps/markersOnMap.php";  //map page
     header("Location: main.php");
     die();
 }
-//-------------------------------1.refinement form was sent: inserting variables to $_SESSION:
+//--------------------------------------------------1.refinement form was sent: inserting variables to $_SESSION:
 $dbhr = new dbClassHelpRequestFunctions();
 if (isset($_POST['sort'])) {
     $refinementArray = array();
@@ -66,7 +67,7 @@ if (isset($_POST['sort'])) {
     }
     if (isset($_POST['future']))
     {
-        $refinementArray['future'] = "";     //indicates that user wants to see past requests
+        $refinementArray['future'] = "";    //indicates that user wants to see past requests
         //echo "future = ".$_POST['future']."<br>";
     }
     //echo "sorted = '".$dbhr->getRefinedHelpRequests($refinementArray)."'<br>";
@@ -76,7 +77,7 @@ if (isset($_POST['sort'])) {
     header("Location: main.php");
     die();
 }
-//--------------------------------------------2.getting helpRequests according to refinement:
+//---------------------------------------------------------------2.getting helpRequests according to refinement:
 else if (isset($_SESSION['refinement']))
 {
     $helpRequestsArr = $dbhr->getRefinedHelpRequests($_SESSION['refinement']);
@@ -103,7 +104,7 @@ else{
     //$helpRequestsArr = $dbhr->getAllHelpRequests(); //contains all help Requests
     $helpRequestsArr = $dbhr->getAllActiveHelpRequests(); //contains all help Requests
 }
-//---------------------------------------------------------------Sorting options form:
+//---------------------------------------------------------------------Sorting options form:
 //filling options for selection box:
 $cityNameArr = array();
 $helpTypeArr = array();
@@ -114,7 +115,7 @@ foreach ($dbhr->getAllActiveHelpRequests() as $k=>$v)
 }
 $cityNameArr = array_unique($cityNameArr);
 $helpTypeArr = array_unique($helpTypeArr);
-//---------------------------------------------------------------
+//----------------------------------------------------------
 ?>
 <div class='d-flex justify-content-center'>
     <div class='card' id='helpRequests-refinement'>

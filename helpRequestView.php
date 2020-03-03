@@ -244,14 +244,14 @@ if (isset($_SESSION['helpRequestView']))
                     //alert("need to unlike");
                     document.getElementById(strArr[0]+"-"+strArr[1]+"-yes").style.backgroundImage="url(images/like-empty.png)";
                     document.getElementById(strArr[0]+"-"+strArr[1]+"-yes").id=strArr[0]+"-"+strArr[1]+"-no";
-                    document.getElementById("tooltip-text-"+strArr[0]).innerHTML = "Liking this request will leave your details to the publisher so he can get back to you.";
+                    document.getElementById("tooltip-text-"+strArr[0]).innerHTML = "Liking this request will leave your details to the publisher so he can get back to you";
                 }
                 else
                 {
                     //alert("need to like");
                     document.getElementById(strArr[0]+"-"+strArr[1]+"-no").style.backgroundImage="url(images/like-full.png)";
                     document.getElementById(strArr[0]+"-"+strArr[1]+"-no").id=strArr[0]+"-"+strArr[1]+"-yes";
-                    document.getElementById("tooltip-text-"+strArr[0]).innerHTML = "You've already liked this request! The publisher has your details.";
+                    document.getElementById("tooltip-text-"+strArr[0]).innerHTML = "You've already liked this request! The publisher has your details";
                 }
             }
         });
@@ -328,10 +328,10 @@ if (isset($_SESSION['helpRequestView']))
     function doNothing() {}
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZppJHPHXdY3_nK8EWiXtBdrjO8poDxcs-U&callback">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWfRbSTsQxwFkIlX2BuvQCgUglN8Hun-U&callback">
 </script>
 <?php
-// remove =initMap 
+// remove =initMap
 //echo $_SESSION['helpRequestView'];
 //unset($_SESSION['helpRequestView']);
 ?>

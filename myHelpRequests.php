@@ -11,17 +11,17 @@ require_once "classes/Pet_HelpRequest.php";
 require_once "classes/dbClassUserFunctions.php";
 require_once "classes/dbClassRankingFunctions.php";
 $db = new dbClass();
-//-------------------------------------form handling:
+//-----------------------------------------------------form handling:
 reset($_POST);
 $first_key = key($_POST);   //command + ID of request
 //echo $first_key."<br>";
-if (isset($_POST['addhr']))                             //if add help request clicked
+if (isset($_POST['addhr']))                                    //if add help request clicked
 {
     $_SESSION['nextPage']="helpRequestAdd.php";
     header("Location: main.php");
     die();
 }
-else if (substr($first_key, 0, 6) === "delete")         //if delete button is pressed
+else if (substr($first_key, 0, 6) === "delete")       //if delete button is pressed
 {
     $first_key = substr($first_key, 6);
     echo $first_key;
@@ -36,7 +36,7 @@ else if (substr($first_key, 0, 6) === "delete")         //if delete button is pr
     header("Location: main.php");
     die();
 }
-else if (substr($first_key, 0, 4) === "view")           //if view button is pressed
+else if (substr($first_key, 0, 4) === "view")       //if view button is pressed
 {
     $first_key = substr($first_key, 4);
     echo $first_key;
@@ -72,6 +72,7 @@ else if (substr($first_key, 0, 17) === "UserProfileToShow")       //if a name wa
     echo "<br>userID clicked: ".$first_key;
     $_SESSION['UserProfileToShow']=$first_key;
     $_SESSION['nextPage']="ProfileUser.php";
+
     header("Location: main.php");
     die();
 }
@@ -102,7 +103,7 @@ else {
         echo "<div id='myHelpRequestsContainer'>";
         //getting array of pets_helprequests for each help:
         $HRpetsArray = $db->getObjectsGeneral("pets_helprequests", " WHERE `helpID`='" . $k->getHelpID() . "'", "Pet_HelpRequest");
-        //----------------------------------------new card:
+        //-------------------------------------new card:
         if ($k->getHelpStatus() == 1)
             $cardCssId = "helpRequestCard";
         else
@@ -133,7 +134,7 @@ else {
         }
         $str .= "<button type='submit' class='btn btn-primary' name='" . "view" . $k->getHelpID() . "'>View</button></form>";
         //interested:
-        //-----------------------------------------------------------Interested:
+        //-----------------------------------------------------------------------Interested:
         $dbi = new dbClassInterested();
         $interestedArr = $dbi->GetInterestedByhelpID($k->getHelpID());
         if ($k->getHelpStatus() == 1)
@@ -157,7 +158,7 @@ else {
                 $str .= "no one is interested yet<br>";
             }
         }
-        else if ($k->getHelpStatus() == 2)      //help request is done
+        else if ($k->getHelpStatus() == 2)//help request is done
         {
             $dbr = new dbClassRankingFunctions();
             $dbu = new dbClassUserFunctions();

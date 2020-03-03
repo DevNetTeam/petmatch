@@ -71,7 +71,7 @@ $petsStr.="</div>";
 <script>    <!-- form validation -->
     function validateForm() {
         var errorMsg = "";
-        //----------------------------------------------------dates:
+        //--------------------------------------------dates:
         d1 = new Date(document.getElementById("datestart").value);
         d2 = new Date(document.getElementById("dateend").value);
         if (d2<d1)

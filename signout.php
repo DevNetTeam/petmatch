@@ -9,4 +9,4 @@ if (isset($_SESSION['user'])){
     // header("Location: main.php");
     die();
 }
-echo "signed out";
+//echo "signed out";

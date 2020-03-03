@@ -35,7 +35,7 @@ class dbClassPetsFunctions
         $petsArray = $db->getObjectsGeneral("pets", "WHERE petType='$type'", "Pet");
         return $petsArray;
     }
-    //---------------------------------------------------------------------------------------------Images:
+    //-----------------------------------------------------------------------------------------------Images:
     function loadPetImageByID($petID) {
         //uploads an image for pet with id given to function
         //todo: check size, more formats maybe?
@@ -45,16 +45,16 @@ class dbClassPetsFunctions
         //print_r($_FILES);
         //echo "</pre>";
         //echo "Type: ".$_FILES['load_user_file']['type']."<br>";
-        if ($_FILES['load_user_file']['tmp_name'] != "")                                    //if file was chosen
+        if ($_FILES['load_user_file']['tmp_name'] != "")                                //if file was chosen
         {
-            if (file_exists($_FILES['load_user_file']['tmp_name']))                         //if file exists
+            if (file_exists($_FILES['load_user_file']['tmp_name']))                     //if file exists
             {
-                if (strpos($_FILES['load_user_file']['type'], 'image') !== false)           //if image (v)
+                if (strpos($_FILES['load_user_file']['type'], 'image') !== false)       //if image (v)
                 {
                     //echo "POST[id] = ".$_POST['id']."<br>";
                     $db = new dbClass();
                     $p = $db->getPetByID($petID);
-                    if ($p != null)                                                         //if pet exists (v)
+                    if ($p != null)                                                     //if pet exists (v)
                     {
                         $location = "Images/Pets/";
                         $filename = trim($petID).".jpg";
@@ -140,7 +140,7 @@ class dbClassPetsFunctions
                 $str.=$v."\n";
             }
             if ($this->getPetsArrayByType($typeString)==null){  //if no pets of that type in db -> deleting image
-                                                                //removes image for pet with id given to function
+                //removes image for pet with id given to function
                 $location = "Images/Pets/General/";
                 $filename = trim($typeString) . ".png";
                 if (file_exists($location . $filename)) {

@@ -7,6 +7,8 @@ require_once "classes/User.php";
 require_once "classes/Pet.php";
 require_once "classes/dbClassRankingFunctions.php";
 require_once "classes/dbClassUserFunctions.php";
+
+
 $db = new dbClass();
 $dbr = new dbClassRankingFunctions();
 $signedInUser=$db->getSignedInUserData();
@@ -36,28 +38,37 @@ else if (isset($_POST['PasswordChangeDataSent'])){
     {
         $_SESSION['userMessage']="ERROR. Wrong password. Password wasn't changed.";
     }
+
     $_SESSION['nextPage']="ProfileUser.php";
     $_SESSION['UserProfileToShow']=$_SESSION['user'];
     header("Location: main.php");
     die();
+
 }
+
 //getting user:
 $u = $db->getObjectsGeneral("users", " WHERE `userID`='".$_SESSION['UserProfileToShow']."'", "User")[0];
 unset($_SESSION['UserProfileToShow']);
+
 //getting User's Pets:
 $petsArray = $db->getObjectsGeneral("pets", " WHERE `userID`='".$u->getUserID()."'", "Pet");
+
 //-------------------------------building pets string:
 if ($petsArray == null){
     $petsStr="<br><b>No pets found</b>";
 }
 else {
     $petsStr="<br><b>Pets:</b>";
+
     $petsStr.="<br>";
     foreach ($petsArray as $p) //each $p is a Pet object
     {
         $image_str = "'background-image:url(".$db->getPetImageLocation($p).")';";
         $petsStr.="<div class='pet-img' style=$image_str><div class='pet-name'>".$p->getPetName()."</div></div>";
     }
+
+
+
     //echo $petsStr;
 }
 //-----------------------------------------------profile string:
@@ -70,9 +81,11 @@ if ($u->getUserID() == $_SESSION['user']){
 }
 else
     $str.=$u->getUserFName()." ".$u->getUserLName()."'s Profile";
+
   $str.="</h5>";
   $str.="<div class='card-body'>";
     $str.="<p class='card-text'>";
+
 if ($u->getUserID() == $_SESSION['user'])
 {
     if ($u->getUserPhone()=="")
@@ -81,12 +94,15 @@ if ($u->getUserID() == $_SESSION['user'])
         $str.="<div class='red-text-warning'>You haven't added any pets yet. Why not join our community and get some request?</div><br>";
     else if ($u->getUserAbout()=="")
         $str.="<div class='red-text-warning'>You haven't written anything about yourself. A few words makes a huge difference and help others trust you.</div><br>";
+
 }
+
     $str.="<b>Name: </b>".$u->getUserFName()." ".$u->getUserLName()."<br>";
     if ($u->getUserBirthday()=="0000-00-00")
         $str.="<b>Birthday: </b>Not Entered<br>";
     else
         $str.="<b>Birthday: </b>".$u->getUserBirthday()."<br>";
+
     //rating:
     $userRank = $dbr->getUserRankByID($u->getUserID());
     $userRankStr = $userRank;
@@ -94,6 +110,7 @@ if ($u->getUserID() == $_SESSION['user'])
         $str.="<b>Rating: </b>".number_format((float)$userRankStr, 2, '.', '')."<br>";
     else
         $str.="<b>Rating: </b>No Rating yet.<br>";
+
     //About:
     if ($u->getUserAbout() == "")
         $str.="<b>About: </b>Not Entered<br>";
@@ -104,15 +121,20 @@ if ($u->getUserID() == $_SESSION['user'])
     $str.=$petsStr;
   $str.="</div>";
 $str.="</div>";
+
 echo "<div class='d-flex justify-content-center'>";
 echo $str;      //profile card
 echo "</div>";
 //-----------------------------------------------------------------------private information:
+
+
 if ($u->getUserID() == $_SESSION['user']){
     $str="<br>";
+
     $str.="<div class='d-flex justify-content-center'>";
     $str .= "<div class='card' id='userReviewCard'>";
     $str .= "<div class='card-header'><b>";
+
     $str.="Private information visible only to you:";
     $str .= "</b></div>";
     $str .= "<div class='card-body'>";
@@ -123,24 +145,33 @@ if ($u->getUserID() == $_SESSION['user']){
         $str.="<b>Phone number: </b>".$u->getUserPhone()."<br>";
     $str.="<div id='changePasswordDiv'><button type='submit' class='btn btn-primary' id='changePasswordButton'>Change password</button></div><br>";
     $str .= "<p class='card-text'>";
+
+
+
     $str.="</p>";
     $str .= "</div>";
     $str .= "</div><br>";
+
+
     $str.="</div>";
+
     echo $str;      //reviews
 }
 //-----------------------------------------------------------------------reviews:
 $str="<br>";
 $ranksArr = $db->getObjectsGeneral("rankings", " WHERE `rankedUserID` = '".$u->getUserID()."'", "Ranking");
 if (!empty($ranksArr)){
+
         $str.="<div class='d-flex justify-content-center'>";
         $str .= "<div class='card' id='userReviewCard'>";
         $str .= "<div class='card-header'><b>";
+
         $str.="Reviews:";
         $str .= "</b></div>";
         $str .= "<div class='card-body'>";
         //$str .= "<h5 class='card-title'>Special title treatment</h5>";
         $str .= "<p class='card-text'>";
+
     foreach ($ranksArr as $k=>$v) {
             $dbu = new dbClassUserFunctions();
             $ReviewingUser = $dbu->getUserByID($v->getRankingUserID());
@@ -150,11 +181,18 @@ if (!empty($ranksArr)){
         $str.="</p>";
         $str .= "</div>";
         $str .= "</div><br>";
+
+
         $str.="</div><br>";
+
     echo $str;      //reviews
 }
 //---------------------------------------
+
+
+
 echo "</div>";
+
 ?>
 <script>    <!--change password form-->
     $(document).ready(function() {
@@ -171,3 +209,7 @@ echo "</div>";
         });
     });
 </script>
+
+
+
+
