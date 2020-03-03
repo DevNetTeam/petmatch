@@ -328,9 +328,10 @@ if (isset($_SESSION['helpRequestView']))
     function doNothing() {}
 </script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZppJHPHXdY3_nK8EWiXtBdrjO8poDxcs-U&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZppJHPHXdY3_nK8EWiXtBdrjO8poDxcs-U&callback">
 </script>
 <?php
+// remove =initMap 
 //echo $_SESSION['helpRequestView'];
 //unset($_SESSION['helpRequestView']);
 ?>

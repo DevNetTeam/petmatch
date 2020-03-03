@@ -72,7 +72,6 @@ else if (substr($first_key, 0, 17) === "UserProfileToShow")       //if a name wa
     echo "<br>userID clicked: ".$first_key;
     $_SESSION['UserProfileToShow']=$first_key;
     $_SESSION['nextPage']="ProfileUser.php";
-
     header("Location: main.php");
     die();
 }
