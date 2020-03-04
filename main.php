@@ -52,6 +52,9 @@ if (isset($_SESSION) && isset($_SESSION['user']))
     else if (isset($_GET['helpRequestAdd'])){
         include_once "helpRequestAdd.php";
     }
+    else if (isset($_GET['aboutus'])){
+        include_once "aboutus.php";
+    }
     else if (isset($_GET['policy'])){
         include_once "policy.php";
     }
@@ -103,3 +106,14 @@ else
 }
 $_SESSION['nextPage']="";
 include_once "footer.php";
+?>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>PetMatchmaking</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    </head>
+  <body>
+  </body>
+</html>
