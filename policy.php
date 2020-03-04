@@ -13,15 +13,15 @@ if (session_status() == PHP_SESSION_NONE) {
   <body>
    <div class="container mt-3">
     <h2>Policy declarion</h2>
-    <p>Place the media object to the top, middle or at the bottom with the flex utilities, align-self-* classes:</p><br>
+    <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.:</p><br>
     <!-- Media top -->
     <div class="media">
     <img src="Images/BigHead.jpg" class="align-self-center mr-3" style="width:60px">
         <div class="media-body">
         <h4>Brah</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
         </div>
     </div>
     <!-- Media middle -->
@@ -29,9 +29,9 @@ if (session_status() == PHP_SESSION_NONE) {
     <img src="Images/BigHead.jpg" class="align-self-center mr-3" style="width:60px">
         <div class="media-body">
         <h4>Smiah</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
         </div>
     </div>
     <!-- Media bottom -->
@@ -39,9 +39,9 @@ if (session_status() == PHP_SESSION_NONE) {
     <img src="Images/BigHead.jpg" class="align-self-center mr-3" style="width:60px">
         <div class="media-body">
         <h4>Mah</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
+            <p>Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta, Ta-ta-ta-ta-ta-ta.</p>
         </div>
     </div>
    </div>

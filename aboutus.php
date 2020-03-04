@@ -11,65 +11,18 @@ if (session_status() == PHP_SESSION_NONE) {
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     </head>
   <body>
-  <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
-  </style>
-</head>
-<body>
-<div class="container mt-3">
-<h2>About Us</h2>
-<div id="myCarousel" class="carousel slide">
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li class="item1 active"></li>
-    <li class="item2"></li>
-  </ul>
-  <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="Images/AntuWonder.jpg" alt="Antu Wonder" width="1100" height="825">
+  <body>
+    <div class="container p-3 my-3 border">
+    <h1>About us</h1>
+        <p>The dynamic world we live in surprises us with each passing day. A nice example is the PetMatchMaking app, which connects pet owners.
+The main purpose for the user is to easily and quickly select by different criteria other dogs to meet your pet.
+PetMatchmaking builds a community of people who share a passion for quadrupeds and helps them create more and more fun shared moments. The intuitive design enables the user to become well acquainted with the other person and his or her pet, and the application logic is to contact only people who have shown mutual interest. 
+In addition to connecting pet owners, PetMatchMaking's mission is to assist them in raising their pet with helpful tips, recommendations for establishments and other dog-friendly places, as well as active work on various social causes.
+        </p>
     </div>
-    <div class="carousel-item">
-      <img src="Images/AntuSmile.jpg" alt="Antu Smile" width="1100" height="825">
+    <div class="container p-3 my-3 bg-dark text-white">
+    <h1>What are we doing?</h1>
+        <p>We are a young and motivated team providing online services to our users.</p>
     </div>
-  </div>
-  <!-- Left and right controls -->
-  <a class="carousel-control-prev" href="#myCarousel">
-    <span class="carousel-control-prev-icon"></span>
-  </a>
-  <a class="carousel-control-next" href="#myCarousel">
-    <span class="carousel-control-next-icon"></span>
-  </a>
- </div>
-</div>
-<script>
-$(document).ready(function(){
-  // Activate Carousel
-  $("#myCarousel").carousel();
-    
-  // Enable Carousel Indicators
-  $(".item1").click(function(){
-    $("#myCarousel").carousel(0);
-  });
-  $(".item2").click(function(){
-    $("#myCarousel").carousel(1);
-  });
-  // Enable Carousel Controls
-  $(".carousel-control-prev").click(function(){
-    $("#myCarousel").carousel("prev");
-  });
-  $(".carousel-control-next").click(function(){
-    $("#myCarousel").carousel("next");
-  });
-});
-</script>
   </body>
 </html>
- <!--for-carousel-->
- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
