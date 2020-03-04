@@ -12,6 +12,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="main.php">Home</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Info
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Help Requests">
+                            <a class="dropdown-item" href="?aboutus">About Us</a>
+                            <a class="dropdown-item" href="?curious">Curious</a>
+                            <a class="dropdown-item" href="?policy">Policy</a>
+                            <a class="dropdown-item" href="?help">Help</a>
+                            <a class="dropdown-item" href="?terms">Terms</a>
+                        </div>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="?contactUs">Contact us</a>
                     </li>

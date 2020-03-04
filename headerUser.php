@@ -27,7 +27,7 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Requests
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="Help Requests">
+                        <div class="dropdown-menu" aria-labelledby="Requests">
                             <a class="dropdown-item" href="?helpRequestsAll">All requests</a>
                             <a class="dropdown-item" href="?myHelpRequests">My request</a>
                             <a class="dropdown-item" href="?helpRequestAdd">Add a new request</a>
@@ -37,8 +37,9 @@ if (session_status() == PHP_SESSION_NONE) {
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Info
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="Help Requests">
+                        <div class="dropdown-menu" aria-labelledby="Info">
                             <a class="dropdown-item" href="?aboutus">About Us</a>
+                            <a class="dropdown-item" href="?curious">Curious</a>
                             <a class="dropdown-item" href="?policy">Policy</a>
                             <a class="dropdown-item" href="?help">Help</a>
                             <a class="dropdown-item" href="?terms">Terms</a>

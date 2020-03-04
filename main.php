@@ -55,6 +55,9 @@ if (isset($_SESSION) && isset($_SESSION['user']))
     else if (isset($_GET['aboutus'])){
         include_once "aboutus.php";
     }
+    else if (isset($_GET['curious'])){
+        include_once "curious.php";
+    }
     else if (isset($_GET['policy'])){
         include_once "policy.php";
     }
