@@ -119,7 +119,7 @@ $helpTypeArr = array_unique($helpTypeArr);
 ?>
 <div class='d-flex justify-content-center'>
     <div class='card' id='helpRequests-refinement'>
-        <h5 class="card-header">Messages</h5>
+        <h5 class="card-header">Requests</h5>
     <form action="HelpRequestsAll.php" method="post" enctype="multipart/form-data">
         <div class="form-group" id='helpRequests-refinement-text'>
             <div class="form-row">
