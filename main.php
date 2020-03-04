@@ -103,6 +103,21 @@ else
     else if (isset($_GET['contactUs'])){
         include_once "contactus.php";
     }
+    else if (isset($_GET['aboutus'])){
+        include_once "aboutus.php";
+    }
+    else if (isset($_GET['curious'])){
+        include_once "curious.php";
+    }
+    else if (isset($_GET['policy'])){
+        include_once "policy.php";
+    }
+    else if (isset($_GET['help'])){
+        include_once "help.php";
+    }
+    else if (isset($_GET['terms'])){
+        include_once "terms.php";
+    }
     else {
         include_once "signin.php";
     }
