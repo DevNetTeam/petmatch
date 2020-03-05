@@ -17,22 +17,6 @@ if (session_status() == PHP_SESSION_NONE) {
                     <li class="nav-item">
                         <a class="nav-link" href="main.php">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?myProfile">My profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="?myPets">My pets</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Requests
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="Requests">
-                            <a class="dropdown-item" href="?helpRequestsAll">All requests</a>
-                            <a class="dropdown-item" href="?myHelpRequests">My request</a>
-                            <a class="dropdown-item" href="?helpRequestAdd">Add a new request</a>
-                        </div>
-                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Info
@@ -44,6 +28,22 @@ if (session_status() == PHP_SESSION_NONE) {
                             <a class="dropdown-item" href="?help">Help</a>
                             <a class="dropdown-item" href="?terms">Terms</a>
                         </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Requests
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="Requests">
+                            <a class="dropdown-item" href="?helpRequestsAll">All requests</a>
+                            <a class="dropdown-item" href="?myHelpRequests">My request</a>
+                            <a class="dropdown-item" href="?helpRequestAdd">Add a new request</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?myProfile">My profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="?myPets">My pets</a>
                     </li>
                     <?php
                     require_once "classes/dbClass.php";

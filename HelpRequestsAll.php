@@ -215,7 +215,7 @@ else
                 $helpTimeStr .= "<b>Time:</b> ".substr($k->getHelpStartTime(), 0, 10)." - ".substr($k->getHelpEndTime(), 0, 10)."<br>";
             $str.=$helpTimeStr;
             $str.="<b>Location:</b> ".$k->getHelpLocCity().", ".$k->getHelpLocStreet()."<br>";
-            $str.="<b>Information:</b> ".$k->getHelpPayment()."<br>";
+            $str.="<b>Payment Information:</b> ".$k->getHelpPayment()."<br>";
             $str.="<b>Request by: </b>".$userName."";
             $str.="<form action='myHelpRequests.php' method=post><button type='submit' class='btn btn-primary' name='"."view".$k->getHelpID()."'>View</button>";
             if ($k->getUserID() == $_SESSION['user'])
