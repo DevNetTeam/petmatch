@@ -126,7 +126,7 @@ else {
             $helpTimeStr .= "<b>Time:</b> " . substr($k->getHelpStartTime(), 0, 10) . " - " . substr($k->getHelpEndTime(), 0, 10) . "<br>";
         $str .= $helpTimeStr;
         $str .= "<b>Location:</b> " . $k->getHelpLocCity() . ", " . $k->getHelpLocStreet() . "<br>";
-        $str .= "<b>Payment Information:</b> " . $k->getHelpPayment() . "";
+        $str .= "<b>Reward Information:</b> " . $k->getHelpPayment() . "";
         $str .= "<form action='myHelpRequests.php' method=post>";
         if ($k->getHelpStatus() == 1) {
             $str .= "<button type='submit' class='btn btn-primary' name='" . "delete" . $k->getHelpID() . "'>Delete</button>  ";

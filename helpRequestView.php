@@ -87,7 +87,7 @@ if (isset($_SESSION['helpRequestView']))
                      $helpTimeStr .= "<b>Time: </b>".$help->getHelpStartTime()." - ".$help->getHelpEndTime()."<br>";
                  $str.=$helpTimeStr;
                  $str.="<b>Location: </b>".$help->getHelpLocCity().", ".$help->getHelpLocStreet()."<br>";
-                 $str.="<b>Payment: </b>".$help->getHelpPayment()."<br><br>";
+                 $str.="<b>Reward Information: </b>".$help->getHelpPayment()."<br><br>";
                  $str.="<b>Description:</b><br>".$help->getHelpAbout()."<br>";
                  $str.="</td><td align='center'>";
                  $str.=$petsStr;

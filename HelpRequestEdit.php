@@ -135,7 +135,7 @@ $petsStr.="</div>";
     </div>
     <!------------------------------------------------------------------------------------------time\   -->
     <div class="form-group">
-    <label>Payment Information:</label>
+    <label>Reward Information:</label>
         <div class="form-row">
             <div class="col">
         <textarea class="form-control" id="paymentOffer" name="helpPayment" rows="3"><?php echo $helpRequest->getHelpPayment()?></textarea>
